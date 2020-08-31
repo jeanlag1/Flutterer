@@ -1,0 +1,333 @@
+*, html, body {
+    box-sizing: border-box;
+}
+
+body, .primary-container {
+    margin: 0;
+    width: 100%;
+}
+
+body, button, textarea {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 16px;
+}
+
+.primary-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* -----------------------------------
+ * General styles
+ * ----------------------------------- */
+
+.scrollable {
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.button {
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-color: #1A7EBB;
+}
+
+.account-clicked {
+  color: #1DA1F2;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #999;
+    padding: 10px;
+    font-size: 0.95em;
+}
+
+textarea:focus {
+    border: 1px solid deepskyblue;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.card {
+    border: 1px solid #E1E8ED;
+    padding: 10px;
+    margin: 20px 0px;
+    min-height: 120px;
+    /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    /* Set relative positioning to make this the reference point for
+     * absolutely-positioned children */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.card:hover {
+    background-color: #F5F8FA;
+    box-shadow: 0px 0px 9px -5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.delete-btn {
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.delete-btn:hover {
+    color: #000
+}
+
+
+/* -----------------------------------
+ * Sidebar
+ * ----------------------------------- */
+
+.sidebar {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 20px 25px;
+}
+
+.flutterer-logo {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1DA1F2;
+    /* Horizontally center logo within sidebar: */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.owl-icon {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+/* Logo text: */
+.flutterer-logo span {
+    /* Mimic the extra whitespace on the left side of the owl image (so that
+     * the whole logo stays centered): */
+    padding-right: 15px;
+    /* Shift the logo closer to the owl */
+    margin-left: -5px;
+}
+
+.account-list{
+    text-align: center;
+    margin-top: 30px;
+    flex-grow: 1;
+}
+
+.account-list .hint {
+    color: #777;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.account-list .account {
+    width: calc(100% - 20px);
+    margin: 10px 0px;
+    border-color: transparent;
+    border-radius: 18px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: 900;
+    transition: 0.2s ease-in-out;
+}
+
+.account:hover {
+    background-color: rgba(29, 161, 242, 0.2);
+    color: #1DA1F2;
+}
+
+/* -----------------------------------
+ * News feed
+ * ----------------------------------- */
+
+.newsfeed {
+    max-width: 800px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.new-floot-entry {
+    margin: 35px 0;
+    /* Make space for floot-card shadow: */
+    padding: 0px 6px;
+}
+
+.new-floot-entry textarea {
+    transition: height 0.2s ease-in-out;
+    height: 65px;
+    resize: none;
+    width: calc(100% - (65px + 15px));  /* Make space for profile picture width + margin */
+    vertical-align: top;
+}
+
+.new-floot-entry:active textarea, .new-floot-entry textarea:focus {
+    height: 150px;
+}
+
+.floot-button {
+    margin-top: 8px;
+    float: right;
+}
+
+.floot-list {
+    /* Make space for floot-card shadow: */
+    padding: 6px;
+}
+
+/* -----------------------------------
+ * Floot cards
+ * ----------------------------------- */
+
+.floot-card:first-of-type {
+    margin-top: 0;
+}
+
+.floot-card {
+    padding: 10px;
+    padding-bottom: calc(10px + 30px);     /* Make room for comment/like count */
+}
+
+.floot-card .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.floot-card .comment-like-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.like-count, .comment-count {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    float: right;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.like-count {
+    color: #F44336;
+}
+
+.comment-count {
+    color: #555;
+}
+
+.user {
+    font-weight: 600;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.user-photo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* -----------------------------------
+ * Comments
+ * ----------------------------------- */
+
+.comments-container {
+    padding: 10px;
+}
+
+.comment {
+    position: relative;
+    padding: 10px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: row;
+}
+
+.comment:hover {
+    background-color: #F5F8FA;
+}
+
+.comment .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.new-comment-text {
+    height: 100px;
+    resize: none;
+    margin: 10px 0px;
+}
+
+/* -----------------------------------
+ * Modal
+ * ----------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50vw;
+    height: 75vh;
+    min-width: 500px;
+    min-height: 500px;
+    cursor: auto;
+    /* Horizontally center: */
+    margin: 0 auto;
+    /* Vertically center: */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Create modal bubble: */
+    background-color: white;
+    border: 20px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close {
+    float: right;
+    margin-bottom: 10px;
+}
